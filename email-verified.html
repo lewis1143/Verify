@@ -74,6 +74,12 @@
             fill: none;
         }
         
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
         h1 {
             font-size: 28px;
             font-weight: 700;
@@ -85,29 +91,7 @@
             font-size: 16px;
             color: #6B7280;
             line-height: 1.6;
-            margin-bottom: 32px;
-        }
-        
-        .app-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #305CDE 0%, #1e3a8a 100%);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 12px rgba(48, 92, 222, 0.3);
-        }
-        
-        .app-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(48, 92, 222, 0.4);
-        }
-        
-        .app-button:active {
-            transform: translateY(0);
+            margin-bottom: 0;
         }
         
         .logo {
@@ -145,18 +129,7 @@
         </div>
         <h1>Email Verified! ✅</h1>
         <p>Your email address has been successfully verified. You can now return to the PadelPoint app and continue with your account setup.</p>
-        <a href="padelpoint://email-verified" class="app-button">Return to App</a>
     </div>
-    
-    <script>
-        // Auto-redirect to app after 3 seconds if deep link doesn't work
-        setTimeout(() => {
-            window.location.href = 'padelpoint://email-verified';
-        }, 3000);
-        
-        // Also try to open app immediately
-        window.location.href = 'padelpoint://email-verified';
-    </script>
 </body>
 </html>
 
